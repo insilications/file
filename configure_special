@@ -1,1 +1,3 @@
---disable-static --enable-shared --disable-seccomp
+--disable-static
+--enable-shared
+--disable-seccomp
