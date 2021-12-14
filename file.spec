@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : file
-Version  : 5.42
-Release  : 503
-URL      : file:///aot/build/clearlinux/packages/file/file-v5.42.tar.gz
-Source0  : file:///aot/build/clearlinux/packages/file/file-v5.42.tar.gz
+Version  : 6.42
+Release  : 504
+URL      : file:///aot/build/clearlinux/packages/file/file-v6.42.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/file/file-v6.42.tar.gz
 Summary  : Magic number recognition library
 Group    : Development/Tools
 License  : GPL-2.0
@@ -77,7 +77,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639493021
+export SOURCE_DATE_EPOCH=1639493077
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
@@ -376,7 +376,7 @@ fi
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1639493021
+export SOURCE_DATE_EPOCH=1639493077
 rm -rf %{buildroot}
 pushd ../build-special/
 %make_install_special
