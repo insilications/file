@@ -11,6 +11,10 @@ Source0  : file:///aot/build/clearlinux/packages/file/file-v6.42.tar.gz
 Summary  : Magic number recognition library
 Group    : Development/Tools
 License  : GPL-2.0
+Requires: file-bin = %{version}-%{release}
+Requires: file-data = %{version}-%{release}
+Requires: file-lib = %{version}-%{release}
+Requires: file-man = %{version}-%{release}
 BuildRequires : automake-dev
 BuildRequires : buildreq-configure
 BuildRequires : buildreq-distutils3
@@ -68,6 +72,62 @@ Patch1: 0001-decode-ucode.patch
 - Public repo: <https://github.com/file/file>
 - Test framework: <https://github.com/file/file-tests>
 
+%package bin
+Summary: bin components for the file package.
+Group: Binaries
+Requires: file-data = %{version}-%{release}
+
+%description bin
+bin components for the file package.
+
+
+%package data
+Summary: data components for the file package.
+Group: Data
+
+%description data
+data components for the file package.
+
+
+%package dev
+Summary: dev components for the file package.
+Group: Development
+Requires: file-lib = %{version}-%{release}
+Requires: file-bin = %{version}-%{release}
+Requires: file-data = %{version}-%{release}
+Provides: file-devel = %{version}-%{release}
+Requires: file = %{version}-%{release}
+
+%description dev
+dev components for the file package.
+
+
+%package lib
+Summary: lib components for the file package.
+Group: Libraries
+Requires: file-data = %{version}-%{release}
+
+%description lib
+lib components for the file package.
+
+
+%package man
+Summary: man components for the file package.
+Group: Default
+
+%description man
+man components for the file package.
+
+
+%package staticdev
+Summary: staticdev components for the file package.
+Group: Default
+Requires: file-dev = %{version}-%{release}
+
+%description staticdev
+staticdev components for the file package.
+
+
 %prep
 %setup -q -n file
 cd %{_builddir}/file
@@ -82,7 +142,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639514805
+export SOURCE_DATE_EPOCH=1639514952
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
@@ -385,7 +445,7 @@ fi
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1639514805
+export SOURCE_DATE_EPOCH=1639514952
 rm -rf %{buildroot}
 pushd ../build-special/
 %make_install_special
@@ -394,3 +454,33 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files bin
+%defattr(-,root,root,-)
+/usr/bin/file
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/misc/magic.mgc
+
+%files dev
+%defattr(-,root,root,-)
+/usr/include/magic.h
+/usr/lib64/libmagic.la
+/usr/lib64/libmagic.so
+/usr/lib64/pkgconfig/libmagic.pc
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/libmagic.so.1
+/usr/lib64/libmagic.so.1.0.0
+
+%files man
+%defattr(0644,root,root,0755)
+/usr/share/man/man1/file.1
+/usr/share/man/man3/libmagic.3
+/usr/share/man/man5/magic.5
+
+%files staticdev
+%defattr(-,root,root,-)
+/usr/lib64/libmagic.a

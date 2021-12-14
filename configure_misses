@@ -1,7 +1,3 @@
-Configure miss: file formats in man section 5
-Configure miss: file formats in man section 5
-Configure miss: file formats in man section 5
-Configure miss: file formats in man section 5
 Configure miss: fmtcheck
 Configure miss: fmtcheck
 Configure miss: fmtcheck
@@ -10,10 +6,10 @@ Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: gcc options needed to detect all undeclared functions
-Configure miss: seccomp_init in -lseccomp
-Configure miss: seccomp_init in -lseccomp
-Configure miss: seccomp_init in -lseccomp
-Configure miss: seccomp_init in -lseccomp
+Configure miss: libseccomp support
+Configure miss: libseccomp support
+Configure miss: libseccomp support
+Configure miss: libseccomp support
 Configure miss: sys/bswap.h
 Configure miss: sys/bswap.h
 Configure miss: sys/bswap.h
