@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : file
 Version  : 6.42
-Release  : 506
+Release  : 507
 URL      : file:///aot/build/clearlinux/packages/file/file-v6.42.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/file/file-v6.42.tar.gz
 Summary  : Magic number recognition library
@@ -139,7 +139,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639515185
+export SOURCE_DATE_EPOCH=1639515439
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
@@ -241,15 +241,15 @@ export LIBS="${LIBS_GENERATE}"
 --disable-libseccomp \
 --enable-fsect-man5
 ## make_prepend content
-sd "/usr/lib64/libz.so" "/usr/lib64/libz.a" $(fd -uu --glob Makefile)
-sd "/usr/lib64/liblzma.so" "/usr/lib64/liblzma.a" $(fd -uu --glob Makefile)
-sd "/usr/lib64/libzstd.so" "/usr/lib64/libzstd.a" $(fd -uu --glob Makefile)
-sd "/usr/lib64/libbz2.so" "/usr/lib64/libbz2.a" $(fd -uu --glob Makefile)
+#sd "/usr/lib64/libz.so" "/usr/lib64/libz.a" $(fd -uu --glob Makefile)
+#sd "/usr/lib64/liblzma.so" "/usr/lib64/liblzma.a" $(fd -uu --glob Makefile)
+#sd "/usr/lib64/libzstd.so" "/usr/lib64/libzstd.a" $(fd -uu --glob Makefile)
+#sd "/usr/lib64/libbz2.so" "/usr/lib64/libbz2.a" $(fd -uu --glob Makefile)
 #
-sd "\-lz" "/usr/lib64/libz.a" $(fd -uu --glob Makefile)
-sd "\-llzma" "/usr/lib64/liblzma.a" $(fd -uu --glob Makefile)
-sd "\-lzstd" "/usr/lib64/libzstd.a" $(fd -uu --glob Makefile)
-sd "\-lbz2" "/usr/lib64/libbz2.a" $(fd -uu --glob Makefile)
+#sd "\-lz" "/usr/lib64/libz.a" $(fd -uu --glob Makefile)
+#sd "\-llzma" "/usr/lib64/liblzma.a" $(fd -uu --glob Makefile)
+#sd "\-lzstd" "/usr/lib64/libzstd.a" $(fd -uu --glob Makefile)
+#sd "\-lbz2" "/usr/lib64/libbz2.a" $(fd -uu --glob Makefile)
 ## make_prepend end
 make  %{?_smp_mflags}    V=1 VERBOSE=1
 
@@ -277,22 +277,22 @@ export LIBS="${LIBS_USE}"
 --disable-libseccomp \
 --enable-fsect-man5
 ## make_prepend content
-sd "/usr/lib64/libz.so" "/usr/lib64/libz.a" $(fd -uu --glob Makefile)
-sd "/usr/lib64/liblzma.so" "/usr/lib64/liblzma.a" $(fd -uu --glob Makefile)
-sd "/usr/lib64/libzstd.so" "/usr/lib64/libzstd.a" $(fd -uu --glob Makefile)
-sd "/usr/lib64/libbz2.so" "/usr/lib64/libbz2.a" $(fd -uu --glob Makefile)
+#sd "/usr/lib64/libz.so" "/usr/lib64/libz.a" $(fd -uu --glob Makefile)
+#sd "/usr/lib64/liblzma.so" "/usr/lib64/liblzma.a" $(fd -uu --glob Makefile)
+#sd "/usr/lib64/libzstd.so" "/usr/lib64/libzstd.a" $(fd -uu --glob Makefile)
+#sd "/usr/lib64/libbz2.so" "/usr/lib64/libbz2.a" $(fd -uu --glob Makefile)
 #
-sd "\-lz" "/usr/lib64/libz.a" $(fd -uu --glob Makefile)
-sd "\-llzma" "/usr/lib64/liblzma.a" $(fd -uu --glob Makefile)
-sd "\-lzstd" "/usr/lib64/libzstd.a" $(fd -uu --glob Makefile)
-sd "\-lbz2" "/usr/lib64/libbz2.a" $(fd -uu --glob Makefile)
+#sd "\-lz" "/usr/lib64/libz.a" $(fd -uu --glob Makefile)
+#sd "\-llzma" "/usr/lib64/liblzma.a" $(fd -uu --glob Makefile)
+#sd "\-lzstd" "/usr/lib64/libzstd.a" $(fd -uu --glob Makefile)
+#sd "\-lbz2" "/usr/lib64/libbz2.a" $(fd -uu --glob Makefile)
 ## make_prepend end
 make  %{?_smp_mflags}    V=1 VERBOSE=1
 fi
 
 
 %install
-export SOURCE_DATE_EPOCH=1639515185
+export SOURCE_DATE_EPOCH=1639515439
 rm -rf %{buildroot}
 %make_install
 
