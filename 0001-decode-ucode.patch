@@ -1,7 +1,7 @@
 From d83ef8eaa556a96454eb2829eb96d2b9d40a0b77 Mon Sep 17 00:00:00 2001
 From: Arjan van de Ven <arjan@linux.intel.com>
 Date: Thu, 22 Feb 2018 02:37:57 +0000
-Subject: [PATCH] decode ucode
+Subject: [PATCH 1/2] decode ucode
 
 Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
 ---
