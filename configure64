@@ -2,4 +2,3 @@
 --disable-shared
 --disable-libseccomp
 --enable-fsect-man5
---datadir=/usr/share/file
