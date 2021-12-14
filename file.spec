@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : file
 Version  : 6.42
-Release  : 508
+Release  : 509
 URL      : file:///aot/build/clearlinux/packages/file/file-v6.42.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/file/file-v6.42.tar.gz
 Summary  : Magic number recognition library
@@ -144,7 +144,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639516660
+export SOURCE_DATE_EPOCH=1639516842
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
@@ -242,7 +242,7 @@ export LDFLAGS="${LDFLAGS_GENERATE}"
 export ASMFLAGS="${ASMFLAGS_GENERATE}"
 export LIBS="${LIBS_GENERATE}"
 %reconfigure  --enable-static \
---enable-shared \
+--disable-shared \
 --disable-libseccomp \
 --enable-fsect-man5
 ## make_prepend content
@@ -278,7 +278,7 @@ export LDFLAGS="${LDFLAGS_USE}"
 export ASMFLAGS="${ASMFLAGS_USE}"
 export LIBS="${LIBS_USE}"
 %reconfigure --enable-static \
---enable-shared \
+--disable-shared \
 --disable-libseccomp \
 --enable-fsect-man5
 ## make_prepend content
@@ -447,7 +447,7 @@ fi
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1639516660
+export SOURCE_DATE_EPOCH=1639516842
 rm -rf %{buildroot}
 pushd ../build-special/
 %make_install_special
