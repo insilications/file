@@ -1,3 +1,4 @@
 --disable-static
 --enable-shared
---disable-seccomp
+--disable-libseccomp
+--enable-fsect-man5

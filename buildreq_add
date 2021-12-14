@@ -1,14 +1,17 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.binutils-devbuildreq-cmake
+automake-dev
+buildreq-configure
 buildreq-distutils3
 bzip2-dev
 bzip2-staticdev
 doxygen
 elfutils-dev
+elfutils-staticdev
 gcc
 gcc-dev
-gcc-libs-math
 gcc-libstdc++32
+gcc-libs-math
 gcc-libubsan
 gcc-locale
 glibc-dev
@@ -19,10 +22,14 @@ libffi-dev
 libffi-staticdev
 libgcc1
 libstdc++
+libtool-dev
 libxml2-dev
 libxml2-staticdev
+m4
 mesa-dev
 ncurses-dev
+pkg-config
+pkg-config-dev
 python3-dev
 python3-staticdev
 xz-dev

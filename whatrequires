@@ -3,6 +3,7 @@ LyX
 createrepo_c
 e2fsprogs
 file-dev
+file-staticdev
 imagescan
 keepalived
 libmicrohttpd
